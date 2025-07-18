@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div class="popup-overlay" id="popup">
+        <div class="popup-box">
+          <h2>Selamat Datang!</h2>
+          <p>Masukkan nama Anda:</p>
+          <input type="text" id="popupName" placeholder="Nama Anda..." />
+          <button id="popupSubmit">Konfirmasi</button>
+        </div>
+    </div>
+      
+
+    <header>
+        <nav class="navbar">
+          <div class="brand">Ars</div>
+          <button class="hamburger" id="hamburger">&#9776;</button>
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profil saya</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#message">Kontak saya </a></li>
+          </ul>
+        </nav>
+    </header>
+      
+
+  <main>
+    <section id="home" class="home-section">
+        <div class="slider">
+          <!-- Slide 1 -->
+          <div class="slide active">
+            <div class="home-content">
+              <div class="text">
+                <p class="intro">HALO! <span id="dynamicName">Pengunjung</span></p>
+                <h1>Saya <span>Arka</span></h1>
+                <p class="subtitle">Saya sekarang adalah mahasiswa, ingin tau lebih lanjut tentang saya?</p>
+                <div class="buttons">
+                    <button class="btn-yellow" id="btnProfile">Profil saya</button>
+                    <button class="btn-outline" id="btnPortfolio">Portfolio</button>
+                </div>
+              </div>
+              <div class="image">
+                <img src="assets/1.png" alt="Foto Anda" />
+              </div>
+            </div>
+          </div>
+      
+          <!-- Slide 2 -->
+          <div class="slide">
+            <div class="home-content">
+              <div class="text">
+                <p class="intro">HALO LAGI! <span id="dynamicName2">Pengunjung</span></p>
+                <h1>Saya adalah <span>Junior Web Developer</span></h1>
+                <p class="subtitle">Ada pertanyaan lebih lanjut? </p>
+                <div class="buttons">
+                    <button class="btn-yellow" id="btnContact">Hubungi saya</button>
+                </div>
+              </div>
+              <div class="image">
+                <img src="assets/2.png" alt="Foto Anda" />
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+      
+
+    <section id="profile" class="profile-section">
+      <div class="profile-container" fade-in-section>
+        <div class="profile-img">
+          <img src="assets/3.png" alt="Foto Profil" />
+        </div>
+        <div class="profile-info">
+          <h2>Tentang saya:</h2>
+          <p class="about-desc">Hanya seseorang yang terus berusaha menjadi lebih baik hingga langit dan bumi bersatu </p>
+          <ul class="info-list">
+            <li><strong>Nama:</strong> Mathias Rekyan Arka</li>
+            <li><strong>Tanggal Lahir:</strong> 18 Februari 2003</li>
+            <li><strong>Domisili:</strong> Surakarta, Jawa Tengah</li>
+            <li><strong>Email:</strong> mathiasrekyan@gmail.com</li>
+            <li><strong>Phone:</strong> +6285546563987</li>
+          </ul>
+          <a href="#message" class="download-btn">Contact</a>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="portfolio" class="portfolio-section">
+      <h2 class="section-title">Portfolio</h2>
+      <p class="section-subtitle">Beberapa proyek yang pernah saya kerjakan.</p>
+    
+      <div class="portfolio-cards">
+        <div class="portfolio-card">
+          <h4 class="year">2022-2025</h4>
+          <h3 class="project-title">Junior Web Developer</h3>
+          <p class="project-desc">
+            Sertified by BNSP dalam program VSGA Kominfo.
+          </p>
+        </div>
+
+        <div class="portfolio-card">
+          <h4 class="year">2024-Live now!</h4>
+          <h3 class="project-title">Omni Topup</h3>
+          <p class="project-desc">
+            Website topup otomatis. Menyediakan banyak keperluan online kamu! Link: <a href="https://omnitopup.com/">Klik Disini</a>
+          </p>
+        </div>
+      </div><br><br>
+      <div class="portfolio-cards">
+        <div class="portfolio-card">
+          <h4 class="year">2023-Now</h4>
+          <h3 class="project-title">Owner Fanspage Game</h3>
+          <p class="project-desc">
+            Fanspage game dengan 10k+ follower pada platform instagram. <a href="https://www.instagram.com/hoyoverse_co?igsh=MXhha2x6N2dzaTJtYQ==">Lihat Disini</a>
+          </p>
+        </div>
+    </section>
+    
+
+    <section id="message" class="section">
+        <h2>Message Us</h2>
+        <div class="message-container">
+          <form id="messageForm">
+            <div class="form-group">
+              <label>Nama :</label>
+              <input type="text" id="inputName" required placeholder="Nama" />
+            </div>
+            <div class="form-group">
+              <label>Tanggal Lahir :</label>
+              <input type="date" id="inputDOB" required />
+            </div>
+            <div class="form-group">
+              <label>Jenis Kelamin :</label>
+              <label><input type="radio" name="gender" value="Laki - Laki" required /> Laki-Laki</label>
+              <label><input type="radio" name="gender" value="Perempuan" required /> Perempuan</label>
+            </div>
+            <div class="form-group">
+              <label>Pesan :</label>
+              <textarea id="inputMessage" rows="4" required placeholder="Pesan"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+      
+          <div id="outputBox">
+            <p><strong>Current time</strong> : <span id="currentTime"></span></p>
+            <p><strong>Nama</strong> : <span id="outputName"></span></p>
+            <p><strong>Tanggal Lahir</strong> : <span id="outputDOB"></span></p>
+            <p><strong>Jenis Kelamin</strong> : <span id="outputGender"></span></p>
+            <p><strong>Pesan</strong> : <span id="outputMessage"></span></p>
+          </div>
+        </div>
+    </section>
+      
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
