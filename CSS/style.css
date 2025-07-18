@@ -1,0 +1,595 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  
+  .navbar {
+    background-color: #000;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .brand {
+    color: #ffc107;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .nav-links li a:hover {
+    color: yellow;
+  }
+  .nav-links a.active {
+    color: #ffc107;
+    border-bottom: 2px solid #ffc107;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  
+  /* Responsive navbar */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      flex-direction: column;
+      width: 200px;
+      display: none;
+      padding: 1rem;
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin: 10px 0;
+    }
+  }
+  
+  
+  .section {
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .home-section {
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slide.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  .home-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* ini penting agar gambar & teks sejajar vertikal */
+    padding: 50px 10%;
+    height: 100vh; /* atur agar satu layar penuh */
+    max-width: 2000px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* biar responsive di mobile */
+  }
+
+  .home-content .text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .home-content .image {
+    flex: 1;
+    text-align: right;
+    min-width: 200px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .image img {
+    max-width: 600px;
+    width: 100%;
+    max-height: 140%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  
+  
+  .text {
+    max-width: 600px;
+  }
+  
+  .intro {
+    color: #fcbf1e;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  
+  h1 {
+    font-size: 48px;
+    margin: 10px 0;
+  }
+  
+  h1 span {
+    color: #fcbf1e;
+    font-weight: bold;
+  }
+  
+  .subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .btn-yellow {
+    background-color: #fcbf1e;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .image img {
+    max-width: 10000px;
+    width: 100%;
+    height: auto;
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .home-content {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+    }
+  
+    .home-content .image {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .image img {
+      max-width: 300px;
+    }
+    
+    h1 {
+      font-size: 36px;
+    }
+  
+    .subtitle {
+      font-size: 16px;
+    }
+  }
+  
+  
+  #profile {
+    background-color: #000000;
+  }
+  
+  #portfolio {
+    background-color: #000000;
+  }
+  
+  #message {
+    background-color: #000000;
+    color: white;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #000;
+      position: absolute;
+      top: 60px;
+      right: 30px;
+      width: 200px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  
+  .message-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+  }  
+  
+  form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  textarea {
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #888;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
+  #outputBox {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background-color: #1a1a1a; /* Warna latar belakang gelap */
+    border: 1px solid #333;     /* Border halus */
+    padding: 20px;
+    font-size: 14px;
+    color: #fff;                /* Teks putih */
+    border-radius: 10px;        /* Sudut membulat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Bayangan */
+    transition: all 0.3s ease;
+    text-align: left;
+  }
+  
+  #outputBox p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  
+  #outputBox strong {
+    color: #ffd700; /* Warna emas untuk label */
+  }
+  
+  @media (max-width: 768px) {
+    .message-container {
+      flex-direction: column;
+    }
+  }
+
+
+
+  /* Popup overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Popup box */
+  .popup-box {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .popup-box h2 {
+    margin-bottom: 10px;
+    color: #222;
+  }
+  
+  .popup-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .popup-box button {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+
+  .profile-section {
+    background-color: #000;
+    color: #fff;
+    padding: 80px 20px;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .profile-img img {
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  
+  .profile-info {
+    flex: 1;
+    padding: 20px 40px;
+  }
+  
+  .profile-info h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .about-desc {
+    font-size: 16px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+  
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .info-list li {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+  
+  .info-list li strong {
+    display: inline-block;
+    width: 140px;
+    font-weight: 600;
+  }
+  
+  .project-count {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  
+  .highlight {
+    color: #ffc107;
+    font-weight: bold;
+  }
+  
+  .download-btn {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color: #e0a800;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .profile-info {
+      padding: 20px 0;
+    }
+  
+    .info-list li strong {
+      width: 100%;
+      display: block;
+      margin-bottom: 4px;
+    }
+  }
+  
+  
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+  }
+  
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .portfolio-section {
+    padding: 60px 20px;
+    background-color: #0f0f0f;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 40px;
+  }
+  
+  .portfolio-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .portfolio-card {
+    background-color: #1d1d1d;
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .portfolio-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .year {
+    color: #f1c40f;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .project-desc {
+    color: #ccc;
+    font-size: 0.95rem;
+  }
+  
+  .project-desc a {
+    color: #ffffff; /* Warna putih */
+    text-decoration: underline; /* opsional, kalau ingin underline */
+  }
+  .project-desc a:hover {
+    color: #f1c40f; /* warna kuning saat hover */
+  }
+  
